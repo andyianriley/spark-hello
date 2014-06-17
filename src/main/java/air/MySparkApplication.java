@@ -1,7 +1,9 @@
 package air;
 
+import air.model.RestResponse;
 import air.template.Template;
 import air.template.TemplateFactory;
+import air.utilities.JsonTransformer;
 import spark.servlet.SparkApplication;
 
 import static spark.Spark.get;
@@ -19,5 +21,8 @@ public class MySparkApplication implements SparkApplication {
                 String html = template.toHTML();
                 return (html);
         });
+        get("/hello-json", "application/json", (request, response) -> {
+            return new RestResponse("Hello World");
+        }, new JsonTransformer());
     }
 }
