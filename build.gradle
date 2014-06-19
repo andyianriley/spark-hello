@@ -9,6 +9,10 @@ idea {
     }
 }
 
+war {
+    webXml = file('web/WEB-INF/web.xml')
+}
+
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
